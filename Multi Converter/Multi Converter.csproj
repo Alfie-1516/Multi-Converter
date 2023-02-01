@@ -94,5 +94,21 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Files\australia.png" />
+    <Resource Include="Files\canada.png" />
+    <Resource Include="Files\china.png" />
+    <Resource Include="Files\close.png" />
+    <Resource Include="Files\european-union.png" />
+    <Resource Include="Files\expand-window.png" />
+    <Resource Include="Files\hong-kong.png" />
+    <Resource Include="Files\japan.png" />
+    <Resource Include="Files\minimize.png" />
+    <Resource Include="Files\new-zealand.png" />
+    <Resource Include="Files\swap.png" />
+    <Resource Include="Files\switzerland.png" />
+    <Resource Include="Files\united-kingdom.png" />
+    <Resource Include="Files\united-states.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
