@@ -99,20 +99,20 @@
                         <ImageBrush ImageSource="FIles\expand-window.png" Stretch="UniformToFill"/>
                     </Button.Background>
                 </Button>
-                <Button Content="" BorderThickness="0" BorderBrush="Transparent" HorizontalAlignment="Left" Margin="928,10,0,0" VerticalAlignment="Top" Height="30" Width="37" Style="{DynamicResource close_button}">
+                <Button Content="" BorderThickness="0" BorderBrush="Transparent" HorizontalAlignment="Left" Margin="928,10,0,0" VerticalAlignment="Top" Height="30" Width="37" Style="{DynamicResource close_button}" Click="close_win" >
                     <Button.Background>
                         <ImageBrush ImageSource="Files\close.png" Stretch="Uniform"/>
                     </Button.Background>
                 </Button>
 
-                <TextBox  x:Name="Text_left" HorizontalAlignment="Left" Margin="39,204,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="354" Height="66" >
+                <TextBox  x:Name="Text_left" HorizontalAlignment="Left" Margin="39,204,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="354" Height="66" TextChanged="Text_left_TextChanged" >
                     <TextBox.Resources>
                         <Style TargetType="{x:Type Border}">
                             <Setter Property="CornerRadius" Value="10"/>
                         </Style>
                     </TextBox.Resources>
                 </TextBox>
-                <TextBox x:Name="Text_right" HorizontalAlignment="Left" Margin="570,205,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="354" Height="66">
+                <TextBox x:Name="Text_right" HorizontalAlignment="Left" Margin="570,205,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="354" Height="66" TextChanged="Text_right_TextChanged_1">
                     <TextBox.Resources>
                         <Style TargetType="{x:Type Border}">
                             <Setter Property="CornerRadius" Value="10"/>
@@ -120,7 +120,7 @@
                     </TextBox.Resources>
                 </TextBox>
                 <Image HorizontalAlignment="Left" Height="65" Margin="456,205,0,0" VerticalAlignment="Top" Width="96" Source="Files\swap.png"/>
-                <ComboBox x:Name="left_combo_box" HorizontalAlignment="Left" Margin="39,126,0,0" VerticalAlignment="Top" Width="354" Height="66" VerticalContentAlignment="Center" ScrollViewer.VerticalScrollBarVisibility="Visible" >
+                <ComboBox x:Name="left_combo_box" HorizontalAlignment="Left" Margin="39,126,0,0" VerticalAlignment="Top" Width="354" Height="66" VerticalContentAlignment="Center" ScrollViewer.VerticalScrollBarVisibility="Visible" SelectionChanged="left_combo_box_SelectionChanged_1" >
 
                     <ComboBoxItem Name="USD1">
                         <WrapPanel>
@@ -196,7 +196,7 @@
                 </ComboBox>
 
 
-                <ComboBox Name="right_combo_box"  HorizontalAlignment="Left" Margin="570,126,0,0" VerticalAlignment="Top" Width="354" Height="66" VerticalContentAlignment="Center" ScrollViewer.VerticalScrollBarVisibility="Visible" >
+                <ComboBox Name="right_combo_box"  HorizontalAlignment="Left" Margin="570,126,0,0" VerticalAlignment="Top" Width="354" Height="66" VerticalContentAlignment="Center" ScrollViewer.VerticalScrollBarVisibility="Visible" SelectionChanged="right_combo_box_SelectionChanged_1" >
                     <ComboBoxItem Name="USD2" >
                         <WrapPanel>
                             <Image Source="Files\united-states.png" Height="30" Stretch="Uniform" VerticalAlignment="Top" HorizontalAlignment="Center"/>
