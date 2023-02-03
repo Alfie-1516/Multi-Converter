@@ -46,13 +46,7 @@ namespace Multi_Converter
 
         private void Text_right_TextChanged_1(object sender, TextChangedEventArgs e)
         {
-            switch (currency2)
-            {
-                case "USD2":
-                    stringconvertedRate = convertedRate[0].ToString();
-                    Text_right.Text = stringconvertedRate;
-                    break;
-            }
+            
         }
 
         private void Text_left_TextChanged(object sender, TextChangedEventArgs e)
