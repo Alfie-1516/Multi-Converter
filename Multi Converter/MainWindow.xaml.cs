@@ -120,9 +120,11 @@ namespace Multi_Converter
         }
         public static double converter(double initialRate, string userInput, double nextRate)
         {
-
-            double USDRate = Convert.ToDouble(userInput) / initialRate;
-            return USDRate;
+   
+            double USDRate;
+            double.TryParse(userInput, out USDRate);
+            USDRate = USDRate / initialRate;
+            return initialRate;
         }
 
     }
