@@ -77,15 +77,15 @@ namespace Multi_Converter
                             Text_right.Text = stringconvertedRate;
                     }
                     break;
-                case "EUR1":
+                case "JPY1":
                     stringconvertedRate = convertedRate[1].ToString();
                     Text_left.Text = stringconvertedRate;
                     break;
-                case "GBP1":
+                case "EUR1":
                     stringconvertedRate = convertedRate[2].ToString();
                     Text_left.Text = stringconvertedRate;
                     break;
-                case "JPY1":
+                case "GBP1":
                     stringconvertedRate = convertedRate[3].ToString();
                     Text_left.Text = stringconvertedRate;
                     break;
