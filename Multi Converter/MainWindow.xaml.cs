@@ -74,6 +74,7 @@ namespace Multi_Converter
                     break;
                 case "JPY1":
                     initialRate = convertedRate[1];
+
                     Text_left.Text = converter(initialRate,userInput,nextRate).ToString();
                     break;
                 case "EUR1":
