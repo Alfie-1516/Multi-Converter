@@ -23,9 +23,9 @@ namespace Multi_Converter
         public string currency1;
         public string currency2;
         public string stringconvertedRate;
-        public double userInput;
-        public double[] convertedRate = { 1.0,.92103,129.53,.80640,1.43465,1.33761,.91998,
-                                6.78136,7.82839,1.54436};
+        public string userInput;
+        public double[] convertedRate = { 1.0,131.04,.92,.83,1.44,1.34,.92,6.78,7.85,1.57};
+        public string[] currencies = { "USD",};
         public MainWindow()
         {
             InitializeComponent();
@@ -51,6 +51,7 @@ namespace Multi_Converter
 
         private void Text_left_TextChanged(object sender, TextChangedEventArgs e)
         {
+            userInput = Text_left.Text;
             Text_right.Text = Text_left.Text;
         }
 
@@ -68,9 +69,13 @@ namespace Multi_Converter
             switch (currency1)
             {
                 case "USD1":
-                    double resultedRate = convertedRate[0] * userInput;
-                    stringconvertedRate = resultedRate.ToString();
-                    Text_right.Text = stringconvertedRate;
+                    for (int i = 0; i < convertedRate.Length; i++)
+                    {
+                        if (currencies[i] == currency2)
+                            //double resultedRate = convertedRate[i] * Convert.ToDouble(userInput);
+                            //stringconvertedRate = resultedRate.ToString();
+                            Text_right.Text = stringconvertedRate;
+                    }
                     break;
                 case "EUR1":
                     stringconvertedRate = convertedRate[1].ToString();
