@@ -31,19 +31,6 @@ namespace Multi_Converter
         {
             InitializeComponent();
         }
-        private void right_combo_box_SelectionChanged_1(object sender, SelectionChangedEventArgs e)
-        {
-            ComboBoxItem selected_value = (ComboBoxItem)right_combo_box.SelectedItem;
-            currency2 = selected_value.Name;
-            Text_right.Text = currency2;
-        }
-
-        private void left_combo_box_SelectionChanged_1(object sender, SelectionChangedEventArgs e)
-        {
-            ComboBoxItem selected_value = (ComboBoxItem)left_combo_box.SelectedItem;
-            currency1 = selected_value.Name;
-            Text_left.Text= currency1;
-        }
 
         private void minimize_win(object sender, RoutedEventArgs e)
         {
@@ -133,8 +120,11 @@ namespace Multi_Converter
         }
         public static double converter(double initialRate, string userInput, double nextRate) 
         {
-            double USDRate = Convert.ToDouble(userInput)/initialRate;
-            return USDRate;
+   
+            double USDRate;
+            double.TryParse(userInput, out USDRate);
+            USDRate = USDRate / initialRate;
+            return initialRate;
         }
 
     }
