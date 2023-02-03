@@ -22,10 +22,10 @@ namespace Multi_Converter
     {
         public string currency1;
         public string currency2;
-        public string stringconvertedRate;
-        public double userInput;
-        public double[] convertedRate = { 1.0,.92103,129.53,.80640,1.43465,1.33761,.91998,
-                                6.78136,7.82839,1.54436};
+        public string initialRate;
+        public string userInput;
+        public double[] convertedRate = { 1.0,131.04,.92,.83,1.44,1.34,.92,6.78,7.85,1.57};
+        public string[] currencies = { "USD",};
         public MainWindow()
         {
             InitializeComponent();
@@ -46,20 +46,12 @@ namespace Multi_Converter
 
         private void Text_right_TextChanged_1(object sender, TextChangedEventArgs e)
         {
-            switch (currency2)
-            {
-                case "USD2":
-                    stringconvertedRate = convertedRate[0].ToString();
-                    Text_right.Text = stringconvertedRate;
-                    break;
-            }
+            
         }
 
         private void Text_left_TextChanged(object sender, TextChangedEventArgs e)
         {
-            //string userInputstring = Text_left.Text;
-            //INPUT TRY-CATCH EXCEPTION IS THROWN
-            //userInput = Convert.ToDouble(userInputstring);
+            userInput = Text_left.Text;
             Text_right.Text = Text_left.Text;
         }
 
@@ -77,48 +69,52 @@ namespace Multi_Converter
             switch (currency1)
             {
                 case "USD1":
-                    double resultedRate = convertedRate[0] * userInput;
-                    stringconvertedRate = resultedRate.ToString();
-                    Text_right.Text = stringconvertedRate;
-                    break;
-                case "EUR1":
-                    stringconvertedRate = convertedRate[1].ToString();
-                    Text_left.Text = stringconvertedRate;
-                    break;
-                case "GBP1":
-                    stringconvertedRate = convertedRate[2].ToString();
-                    Text_left.Text = stringconvertedRate;
+                    
                     break;
                 case "JPY1":
-                    stringconvertedRate = convertedRate[3].ToString();
-                    Text_left.Text = stringconvertedRate;
+                    initialRate = convertedRate[1].ToString();
+                    Text_left.Text = converter(initialRate,userInput,currency2);
+                    break;
+                case "EUR1":
+                    initialRate = convertedRate[2].ToString();
+                    Text_left.Text = initialRate;
+                    break;
+                case "GBP1":
+                    initialRate = convertedRate[3].ToString();
+                    Text_left.Text = initialRate;
                     break;
                 case "AUD1":
-                    stringconvertedRate = convertedRate[4].ToString();
-                    Text_left.Text = stringconvertedRate;
+                    initialRate = convertedRate[4].ToString();
+                    Text_left.Text = initialRate;
                     break;
                 case "CAD1":
-                    stringconvertedRate = convertedRate[5].ToString();
-                    Text_left.Text = stringconvertedRate;
+                    initialRate = convertedRate[5].ToString();
+                    Text_left.Text = initialRate;
                     break;
                 case "CHF1":
-                    stringconvertedRate = convertedRate[6].ToString();
-                    Text_left.Text = stringconvertedRate;
+                    initialRate = convertedRate[6].ToString();
+                    Text_left.Text = initialRate;
                     break;
                 case "CNH1":
-                    stringconvertedRate = convertedRate[7].ToString();
-                    Text_left.Text = stringconvertedRate;
+                    initialRate = convertedRate[7].ToString();
+                    Text_left.Text = initialRate;
                     break;
                 case "HKD1":
-                    stringconvertedRate = convertedRate[8].ToString();
-                    Text_left.Text = stringconvertedRate;
+                    initialRate = convertedRate[8].ToString();
+                    Text_left.Text = initialRate;
                     break;
                 case "NZD1":
-                    stringconvertedRate = convertedRate[9].ToString();
-                    Text_left.Text = stringconvertedRate;
+                    initialRate = convertedRate[9].ToString();
+                    Text_left.Text = initialRate;
                     break;
 
             }
+        }
+        public static double converter(double initialRate, string userInput, double nextRate) 
+        {
+            double USDRate = Convert.ToDouble(userInput)/initialRate;
+
+            return USDRate;
         }
 
     }
