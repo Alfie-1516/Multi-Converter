@@ -118,9 +118,10 @@ namespace Multi_Converter
             ComboBoxItem selected_value = (ComboBoxItem)left_combo_box.SelectedItem;
             currency1 = selected_value.Name;
         }
-        public static double converter(double initialRate, string userInput, double nextRate) 
+        public static double converter(double initialRate, string userInput, double nextRate)
         {
-            double USDRate = Convert.ToDouble(userInput)/initialRate;
+
+            double USDRate = Convert.ToDouble(userInput) / initialRate;
             return USDRate;
         }
 
