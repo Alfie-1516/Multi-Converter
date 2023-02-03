@@ -65,8 +65,7 @@ namespace Multi_Converter
 
         private void Text_left_TextChanged(object sender, TextChangedEventArgs e)
         {
-           
-
+            userInput = Text_left.Text;
             for (int i = 0; i < currencies.Length; i++)
             {
                 if (currency2 == currencies[i])
@@ -121,11 +120,20 @@ namespace Multi_Converter
             }
         }
 
+        private void right_combo_box_SelectionChanged_1(object sender, SelectionChangedEventArgs e)
+        {
+            ComboBoxItem selected_value = (ComboBoxItem)right_combo_box.SelectedItem;
+            currency2 = selected_value.Name;
+        }
 
+        private void left_combo_box_SelectionChanged_1(object sender, SelectionChangedEventArgs e)
+        {
+            ComboBoxItem selected_value = (ComboBoxItem)left_combo_box.SelectedItem;
+            currency1 = selected_value.Name;
+        }
         public static double converter(double initialRate, string userInput, double nextRate) 
         {
             double USDRate = Convert.ToDouble(userInput)/initialRate;
-
             return USDRate;
         }
 
