@@ -58,7 +58,7 @@ namespace Multi_Converter
         private void Text_left_TextChanged(object sender, TextChangedEventArgs e)
         {
             string userInputstring = Text_left.Text;
-            //INPUT TRY-CATCH EXCEPTION IS THROWN
+            //INPUT TRY-CATCH EXCEPTION IS THROWN WHEN empty
             userInput = Convert.ToDouble(userInputstring);
         }
 
