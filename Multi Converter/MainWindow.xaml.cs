@@ -124,7 +124,7 @@ namespace Multi_Converter
             double USDRate;
             double.TryParse(userInput, out USDRate);
             USDRate = USDRate / initialRate;
-            return initialRate;
+            return USDRate;
         }
 
     }
