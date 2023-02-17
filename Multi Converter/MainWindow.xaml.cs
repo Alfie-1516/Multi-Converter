@@ -133,5 +133,9 @@ namespace Multi_Converter
             return TempAmount;
         }
 
+        private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+        }
     }
 }
