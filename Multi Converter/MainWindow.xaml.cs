@@ -34,7 +34,7 @@ namespace Multi_Converter
 
         private void minimize_win(object sender, RoutedEventArgs e)
         {
-
+           
         }
         private void resize_win(object sender, RoutedEventArgs e)
         {
@@ -105,6 +105,10 @@ namespace Multi_Converter
                     break;
 
             }
+        }
+        private void Options_combo_box(object sender, SelectionChangedEventArgs e)
+        {
+            left_combo_box.Visibility = Visibility.Hidden;
         }
 
         private void right_combo_box_SelectionChanged_1(object sender, SelectionChangedEventArgs e)

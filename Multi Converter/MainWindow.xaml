@@ -105,22 +105,23 @@
                     </Button.Background>
                 </Button>
 
-                <TextBox  x:Name="Text_left" HorizontalAlignment="Left" Margin="39,204,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="354" Height="66" TextChanged="Text_left_TextChanged" FontSize="45" >
+                <TextBox  x:Name="Text_left" HorizontalAlignment="Left" Margin="39,0,0,0" TextWrapping="Wrap" VerticalAlignment="Center" Width="354" Height="66" TextChanged="Text_left_TextChanged" FontSize="45" >
                     <TextBox.Resources>
                         <Style TargetType="{x:Type Border}">
                             <Setter Property="CornerRadius" Value="10"/>
                         </Style>
                     </TextBox.Resources>
                 </TextBox>
-                <TextBox x:Name="Text_right" HorizontalAlignment="Left" Margin="570,205,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="354" Height="66" TextChanged="Text_right_TextChanged_1" FontSize="45">
+                <TextBox x:Name="Text_right" HorizontalAlignment="Left" Margin="570,0,0,0" TextWrapping="Wrap" VerticalAlignment="Center" Width="354" Height="66" TextChanged="Text_right_TextChanged_1" FontSize="45">
                     <TextBox.Resources>
                         <Style TargetType="{x:Type Border}">
                             <Setter Property="CornerRadius" Value="10"/>
                         </Style>
                     </TextBox.Resources>
                 </TextBox>
-                <Image HorizontalAlignment="Left" Height="65" Margin="456,205,0,0" VerticalAlignment="Top" Width="96" Source="Files\swap.png"/>
-                <ComboBox x:Name="left_combo_box" HorizontalAlignment="Left" Margin="39,126,0,0" VerticalAlignment="Top" Width="354" Height="66" VerticalContentAlignment="Center" ScrollViewer.VerticalScrollBarVisibility="Visible" SelectionChanged="left_combo_box_SelectionChanged_1" >
+                <Image HorizontalAlignment="Left" Height="65" Margin="446,0,0,0" VerticalAlignment="Center" Width="96" Source="Files\swap.png"/>
+
+                <ComboBox x:Name="left_combo_box" HorizontalAlignment="Left" Margin="39,180,0,0" VerticalAlignment="Top" Width="354" Height="66" VerticalContentAlignment="Center" ScrollViewer.VerticalScrollBarVisibility="Visible" SelectionChanged="left_combo_box_SelectionChanged_1" >
 
                     <ComboBoxItem Name="USD1">
                         <WrapPanel>
@@ -196,7 +197,7 @@
                 </ComboBox>
 
 
-                <ComboBox Name="right_combo_box"  HorizontalAlignment="Left" Margin="570,126,0,0" VerticalAlignment="Top" Width="354" Height="66" VerticalContentAlignment="Center" ScrollViewer.VerticalScrollBarVisibility="Visible" SelectionChanged="right_combo_box_SelectionChanged_1" >
+                <ComboBox Name="right_combo_box"  HorizontalAlignment="Left" Margin="570,180,0,0" VerticalAlignment="Top" Width="354" Height="66" VerticalContentAlignment="Center" ScrollViewer.VerticalScrollBarVisibility="Visible" SelectionChanged="right_combo_box_SelectionChanged_1" >
                     <ComboBoxItem Name="USD2" >
                         <WrapPanel>
                             <Image Source="Files\united-states.png" Height="30" Stretch="Uniform" VerticalAlignment="Top" HorizontalAlignment="Center"/>
@@ -268,6 +269,17 @@
                         </WrapPanel>
                     </ComboBoxItem>
 
+                </ComboBox>
+                <ComboBox HorizontalAlignment="Left" Margin="39,104,0,0" VerticalAlignment="top" Width="250" Height="50" VerticalContentAlignment="Center" SelectionChanged="Options_combo_box" >
+                    <ComboBoxItem>
+                        <TextBlock Text="Time Conversion" FontSize="20" FontFamily="Cascadia Mono SemiLight"/>
+                    </ComboBoxItem>
+                    <ComboBoxItem>
+                        <TextBlock Text="Crypto Currency" FontSize="20" FontFamily="Cascadia Mono SemiLight"/>
+                    </ComboBoxItem>
+                    <ComboBoxItem>
+                        <TextBlock Text="Currency" FontSize="20" FontFamily="Cascadia Mono SemiLight"/>
+                    </ComboBoxItem>
                 </ComboBox>
             </Grid>
         </Border>
