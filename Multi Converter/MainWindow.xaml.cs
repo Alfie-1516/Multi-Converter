@@ -32,6 +32,13 @@ namespace Multi_Converter
         public MainWindow()
         {
             InitializeComponent();
+
+            time_text.Visibility = Visibility.Hidden;
+            hours_text.Visibility = Visibility.Hidden;
+            min_text.Visibility = Visibility.Hidden;
+            sec_text.Visibility = Visibility.Hidden;
+            t_convo_type.Visibility = Visibility.Hidden;
+            time_text_out.Visibility = Visibility.Hidden;
         }
 
         private void minimize_win(object sender, RoutedEventArgs e)
@@ -120,6 +127,13 @@ namespace Multi_Converter
                 Text_left.Visibility = Visibility.Hidden;
                 Text_right.Visibility = Visibility.Hidden;
                 arrows.Visibility = Visibility.Hidden;
+
+                time_text.Visibility = Visibility.Visible;
+                hours_text.Visibility = Visibility.Visible;
+                min_text.Visibility = Visibility.Visible;
+                sec_text.Visibility = Visibility.Visible;
+                t_convo_type.Visibility = Visibility.Visible;
+                time_text_out.Visibility = Visibility.Visible;  
             }
         }
 
@@ -146,6 +160,11 @@ namespace Multi_Converter
         }
 
         private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+        }
+
+        private void TextBox_TextChanged_1(object sender, TextChangedEventArgs e)
         {
 
         }
