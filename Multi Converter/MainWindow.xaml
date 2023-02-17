@@ -119,7 +119,7 @@
                         </Style>
                     </TextBox.Resources>
                 </TextBox>
-                <Image HorizontalAlignment="Left" Height="65" Margin="446,0,0,0" VerticalAlignment="Center" Width="96" Source="Files\swap.png" d:IsHidden="True"/>
+                <Image Name="arrows" HorizontalAlignment="Left" Height="65" Margin="446,0,0,0" VerticalAlignment="Center" Width="96" Source="Files\swap.png"/>
 
                 <ComboBox x:Name="left_combo_box" HorizontalAlignment="Left" Margin="39,180,0,0" VerticalAlignment="Top" Width="354" Height="66" VerticalContentAlignment="Center" ScrollViewer.VerticalScrollBarVisibility="Visible" SelectionChanged="left_combo_box_SelectionChanged_1" d:IsHidden="True" >
 
@@ -270,14 +270,14 @@
                     </ComboBoxItem>
 
                 </ComboBox>
-                <ComboBox HorizontalAlignment="Left" Margin="39,104,0,0" VerticalAlignment="top" Width="250" Height="50" VerticalContentAlignment="Center" SelectionChanged="Options_combo_box" d:IsHidden="True" >
-                    <ComboBoxItem>
-                        <TextBlock Text="Time Conversion" FontSize="20" FontFamily="Cascadia Mono SemiLight"/>
+                <ComboBox Name="optionsBox" HorizontalAlignment="Left" Margin="39,104,0,0" VerticalAlignment="top" Width="250" Height="50" VerticalContentAlignment="Center" SelectionChanged="Options_combo_box" >
+                    <ComboBoxItem Name = "TimeConversion" >
+                        <TextBlock  Text="Time Conversion" FontSize="20" FontFamily="Cascadia Mono SemiLight"/>
                     </ComboBoxItem>
-                    <ComboBoxItem>
+                    <ComboBoxItem Name = "CryptoCurrency"> 
                         <TextBlock Text="Crypto Currency" FontSize="20" FontFamily="Cascadia Mono SemiLight"/>
                     </ComboBoxItem>
-                    <ComboBoxItem>
+                    <ComboBoxItem Name = "Currency">
                         <TextBlock Text="Currency" FontSize="20" FontFamily="Cascadia Mono SemiLight"/>
                     </ComboBoxItem>
                 </ComboBox>
