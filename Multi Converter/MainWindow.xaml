@@ -269,6 +269,21 @@
                     </ComboBoxItem>
 
                 </ComboBox>
+                <TextBlock HorizontalAlignment="Left" Margin="39,475,0,0" TextWrapping="Wrap" Text="Rate:" VerticalAlignment="Top" Height="57" Width="177" FontSize="36" FontFamily="Algerian"/>
+                <TextBox HorizontalAlignment="Left" Margin="179,475,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="134" Height="57">
+                    <TextBox.Resources>
+                        <Style TargetType="{x:Type Border}">
+                            <Setter Property="CornerRadius" Value="10"/>
+                        </Style>
+                    </TextBox.Resources>
+                </TextBox>
+                <TextBox HorizontalAlignment="Left" Margin="396,475,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="134" Height="57" >
+                    <TextBox.Resources>
+                        <Style TargetType="{x:Type Border}">
+                            <Setter Property="CornerRadius" Value="10"/>
+                        </Style>
+                    </TextBox.Resources>
+                </TextBox>
             </Grid>
         </Border>
     </Border>

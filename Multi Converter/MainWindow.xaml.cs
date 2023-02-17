@@ -22,10 +22,11 @@ namespace Multi_Converter
     {
         public string currency1;
         public string currency2;
-        public string stringconvertedRate;
+        public double initialRate;
+        public double nextRate;
         public string userInput;
         public double[] convertedRate = { 1.0,131.04,.92,.83,1.44,1.34,.92,6.78,7.85,1.57};
-        public string[] currencies = { "USD",};
+        public string[] currencies = { "USD2","JPY2","EUR2","GBP2","AUD2","CAD2","HF2","CNH2","HK2","NZD2"};
         public MainWindow()
         {
             InitializeComponent();
@@ -52,69 +53,78 @@ namespace Multi_Converter
         private void Text_left_TextChanged(object sender, TextChangedEventArgs e)
         {
             userInput = Text_left.Text;
-            Text_right.Text = Text_left.Text;
+            for (int i = 0; i < currencies.Length; i++)
+            {
+                if (currency2 == currencies[i])
+                {
+                    nextRate = convertedRate[i];
+                }
+            }
+
+            switch (currency1)
+            {
+                case "USD1":
+                    initialRate = convertedRate[0];
+                    Text_right.Text = converter(initialRate, userInput, nextRate).ToString();
+                    break;
+                case "JPY1":
+                    initialRate = convertedRate[1];
+                    Text_right.Text = converter(initialRate, userInput, nextRate).ToString();
+                    break;
+                case "EUR1":
+                    initialRate = convertedRate[2];
+                    Text_right.Text = converter(initialRate, userInput, nextRate).ToString();
+                    break;
+                case "GBP1":
+                    initialRate = convertedRate[3];
+                    Text_right.Text = converter(initialRate, userInput, nextRate).ToString();
+                    break;
+                case "AUD1":
+                    initialRate = convertedRate[4];
+                    Text_right.Text = converter(initialRate, userInput, nextRate).ToString();
+                    break;
+                case "CAD1":
+                    initialRate = convertedRate[5];
+                    Text_right.Text = converter(initialRate, userInput, nextRate).ToString();
+                    break;
+                case "CHF1":
+                    initialRate = convertedRate[6];
+                    Text_right.Text = converter(initialRate, userInput, nextRate).ToString();
+                    break;
+                case "CNH1":
+                    initialRate = convertedRate[7];
+                    Text_right.Text = converter(initialRate, userInput, nextRate).ToString();
+                    break;
+                case "HKD1":
+                    initialRate = convertedRate[8];
+                    Text_right.Text = converter(initialRate, userInput, nextRate).ToString();
+                    break;
+                case "NZD1":
+                    initialRate = convertedRate[9];
+                    Text_right.Text = converter(initialRate, userInput, nextRate).ToString();
+                    break;
+
+            }
         }
 
         private void right_combo_box_SelectionChanged_1(object sender, SelectionChangedEventArgs e)
         {
             ComboBoxItem selected_value = (ComboBoxItem)right_combo_box.SelectedItem;
             currency2 = selected_value.Name;
-            Text_right.Text = currency2;
         }
 
         private void left_combo_box_SelectionChanged_1(object sender, SelectionChangedEventArgs e)
         {
             ComboBoxItem selected_value = (ComboBoxItem)left_combo_box.SelectedItem;
             currency1 = selected_value.Name;
-            switch (currency1)
-            {
-                case "USD1":
-                    for (int i = 0; i < convertedRate.Length; i++)
-                    {
-                        if (currencies[i] == currency2)
-                            //double resultedRate = convertedRate[i] * Convert.ToDouble(userInput);
-                            //stringconvertedRate = resultedRate.ToString();
-                            Text_right.Text = stringconvertedRate;
-                    }
-                    break;
-                case "JPY1":
-                    stringconvertedRate = convertedRate[1].ToString();
-                    Text_left.Text = stringconvertedRate;
-                    break;
-                case "EUR1":
-                    stringconvertedRate = convertedRate[2].ToString();
-                    Text_left.Text = stringconvertedRate;
-                    break;
-                case "GBP1":
-                    stringconvertedRate = convertedRate[3].ToString();
-                    Text_left.Text = stringconvertedRate;
-                    break;
-                case "AUD1":
-                    stringconvertedRate = convertedRate[4].ToString();
-                    Text_left.Text = stringconvertedRate;
-                    break;
-                case "CAD1":
-                    stringconvertedRate = convertedRate[5].ToString();
-                    Text_left.Text = stringconvertedRate;
-                    break;
-                case "CHF1":
-                    stringconvertedRate = convertedRate[6].ToString();
-                    Text_left.Text = stringconvertedRate;
-                    break;
-                case "CNH1":
-                    stringconvertedRate = convertedRate[7].ToString();
-                    Text_left.Text = stringconvertedRate;
-                    break;
-                case "HKD1":
-                    stringconvertedRate = convertedRate[8].ToString();
-                    Text_left.Text = stringconvertedRate;
-                    break;
-                case "NZD1":
-                    stringconvertedRate = convertedRate[9].ToString();
-                    Text_left.Text = stringconvertedRate;
-                    break;
-
-            }
+        }
+        public static double converter(double initialRate, string userInput, double nextRate)
+        {
+   
+            double USDRate;
+            double.TryParse(userInput, out USDRate);
+            USDRate = USDRate / initialRate;
+            return initialRate;
         }
 
     }
