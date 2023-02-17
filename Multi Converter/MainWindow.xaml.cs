@@ -123,8 +123,10 @@ namespace Multi_Converter
    
             double USDRate;
             double.TryParse(userInput, out USDRate);
-            USDRate = USDRate / initialRate;
-            return initialRate;
+            double TempAmount = USDRate / initialRate;
+            TempAmount = TempAmount * nextRate;
+            TempAmount = Math.Round(TempAmount, 2);
+            return TempAmount;
         }
 
     }
