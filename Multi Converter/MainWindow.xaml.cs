@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -22,6 +23,7 @@ namespace Multi_Converter
     {
         public string currency1;
         public string currency2;
+        public string time;
         public double initialRate;
         public double nextRate;
         public string userInput;
@@ -108,7 +110,17 @@ namespace Multi_Converter
         }
         private void Options_combo_box(object sender, SelectionChangedEventArgs e)
         {
-            left_combo_box.Visibility = Visibility.Hidden;
+            ComboBoxItem selected_value2 = (ComboBoxItem)optionsBox.SelectedItem;
+            time = selected_value2.Name;
+            Trace.WriteLine(time);
+            if (time == "TimeConversion")
+            {
+                left_combo_box.Visibility = Visibility.Hidden;
+                right_combo_box.Visibility = Visibility.Hidden;
+                Text_left.Visibility = Visibility.Hidden;
+                Text_right.Visibility = Visibility.Hidden;
+                arrows.Visibility = Visibility.Hidden;
+            }
         }
 
         private void right_combo_box_SelectionChanged_1(object sender, SelectionChangedEventArgs e)
