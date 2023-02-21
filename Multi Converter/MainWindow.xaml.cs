@@ -33,12 +33,8 @@ namespace Multi_Converter
         {
             InitializeComponent();
 
-            time_text.Visibility = Visibility.Hidden;
-            hours_text.Visibility = Visibility.Hidden;
-            min_text.Visibility = Visibility.Hidden;
-            sec_text.Visibility = Visibility.Hidden;
-            t_convo_type.Visibility = Visibility.Hidden;
-            time_text_out.Visibility = Visibility.Hidden;
+            optionsBox.SelectedIndex = 0;
+
         }
 
         private void minimize_win(object sender, RoutedEventArgs e)
@@ -120,7 +116,7 @@ namespace Multi_Converter
             ComboBoxItem selected_value2 = (ComboBoxItem)optionsBox.SelectedItem;
             time = selected_value2.Name;
             Trace.WriteLine(time);
-            if (time == "TimeConversion")
+            if (optionsBox.SelectedIndex == 0 )
             {
                 left_combo_box.Visibility = Visibility.Hidden;
                 right_combo_box.Visibility = Visibility.Hidden;
@@ -135,6 +131,39 @@ namespace Multi_Converter
                 t_convo_type.Visibility = Visibility.Visible;
                 time_text_out.Visibility = Visibility.Visible;  
             }
+            else if (optionsBox.SelectedIndex == 1)
+            {
+                time_text.Visibility = Visibility.Hidden;
+                hours_text.Visibility = Visibility.Hidden;
+                min_text.Visibility = Visibility.Hidden;
+                sec_text.Visibility = Visibility.Hidden;
+                t_convo_type.Visibility = Visibility.Hidden;
+                time_text_out.Visibility = Visibility.Hidden;
+
+                left_combo_box.Visibility = Visibility.Hidden;
+                right_combo_box.Visibility = Visibility.Hidden;
+                Text_left.Visibility = Visibility.Hidden;
+                Text_right.Visibility = Visibility.Hidden;
+                arrows.Visibility = Visibility.Hidden;
+            }
+            else if(optionsBox.SelectedIndex == 2)
+            {
+
+                time_text.Visibility = Visibility.Hidden;
+                hours_text.Visibility = Visibility.Hidden;
+                min_text.Visibility = Visibility.Hidden;
+                sec_text.Visibility = Visibility.Hidden;
+                t_convo_type.Visibility = Visibility.Hidden;
+                time_text_out.Visibility = Visibility.Hidden;
+
+                left_combo_box.Visibility = Visibility.Visible;
+                right_combo_box.Visibility = Visibility.Visible;
+                Text_left.Visibility = Visibility.Visible;
+                Text_right.Visibility = Visibility.Visible;
+                arrows.Visibility = Visibility.Visible;    
+            }
+
+            
         }
 
         private void right_combo_box_SelectionChanged_1(object sender, SelectionChangedEventArgs e)
