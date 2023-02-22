@@ -281,23 +281,23 @@
                         <TextBlock Text="Currency" FontSize="20" FontFamily="Cascadia Mono SemiLight"/>
                     </ComboBoxItem>
                 </ComboBox>
-                <TextBlock  Name="time_text" HorizontalAlignment="Left" Margin="39,169,0,0" TextWrapping="Wrap" Text="Time" VerticalAlignment="Top" Height="54" Width="148" FontSize="40" FontFamily="Cascadia Code"/>
+                <TextBlock  Name="time_text" HorizontalAlignment="Left" Margin="374,159,0,0" TextWrapping="Wrap" Text="Time" VerticalAlignment="Top" Height="54" Width="148" FontSize="40" FontFamily="Cascadia Code" TextAlignment="Center"/>
 
-                <TextBox Name="hours_text" HorizontalAlignment="Left" Margin="39,258,0,0" TextWrapping="Wrap" Text="Hours" VerticalAlignment="Top" Width="83" Height="58" VerticalContentAlignment="Center" TextChanged="TextBox_TextChanged_1" FontSize="15">
+                <TextBox Name="hours_text" HorizontalAlignment="Left" Margin="39,305,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="83" Height="58" VerticalContentAlignment="Center" TextChanged="TextBox_TextChanged_1" FontSize="45">
                     <TextBox.Resources>
                         <Style TargetType="{x:Type Border}">
                             <Setter Property="CornerRadius" Value="10"/>
                         </Style>
                     </TextBox.Resources>
                 </TextBox>
-                <TextBox Name="min_text" HorizontalAlignment="Left" Margin="153,257,0,0" TextWrapping="Wrap" Text="Minutes" VerticalAlignment="Top" Width="83" Height="59" VerticalContentAlignment="Center" FontSize="15">
+                <TextBox Name="min_text" HorizontalAlignment="Left" Margin="153,304,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="83" Height="59" VerticalContentAlignment="Center" FontSize="45">
                     <TextBox.Resources>
                         <Style TargetType="{x:Type Border}">
                             <Setter Property="CornerRadius" Value="10"/>
                         </Style>
                     </TextBox.Resources>
                 </TextBox>
-                <TextBox Name="sec_text" HorizontalAlignment="Left" Margin="280,257,0,0" TextWrapping="Wrap" Text="Seconds" VerticalAlignment="Top" Width="83" Height="59" TextChanged="TextBox_TextChanged" VerticalContentAlignment="Center" FontSize="15">
+                <TextBox Name="sec_text" HorizontalAlignment="Left" Margin="280,305,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="83" Height="59" TextChanged="TextBox_TextChanged" VerticalContentAlignment="Center" FontSize="45">
                     <TextBox.Resources>
                         <Style TargetType="{x:Type Border}">
                             <Setter Property="CornerRadius" Value="10"/>
@@ -305,7 +305,7 @@
                     </TextBox.Resources>
                 </TextBox>
 
-                <ComboBox Name="t_convo_type" HorizontalAlignment="Left" Margin="570,169,0,0" VerticalAlignment="Top" Width="288" Height="54" VerticalContentAlignment ="Center">
+                <ComboBox Name="t_convo_type" HorizontalAlignment="Left" Margin="570,304,0,0" VerticalAlignment="Top" Width="288" Height="54" VerticalContentAlignment ="Center" SelectionChanged="time_convo_type_SelectionChanged">
                     <ComboBoxItem>
                         <TextBlock Text="Hours" FontSize="20"/>
                     </ComboBoxItem>
@@ -316,13 +316,17 @@
                         <TextBlock Text="Seconds" FontSize="20"/>
                     </ComboBoxItem>
                 </ComboBox>
-                <TextBox Name="time_text_out" HorizontalAlignment="Left" Margin="570,257,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="288" Height="59" VerticalContentAlignment="Center">
+                <TextBox Name="time_text_out" HorizontalAlignment="Left" Margin="322,438,0,0" TextWrapping="Wrap" Text= "{Binding Reviews, StringFormat='{}{0:#,0}'}"  VerticalAlignment="Top" Width="288" Height="59" VerticalContentAlignment="Center" FontSize="45">
                     <TextBox.Resources>
                         <Style TargetType="{x:Type Border}">
                             <Setter Property="CornerRadius" Value="10"/>
                         </Style>
                     </TextBox.Resources>
                 </TextBox>
+                <TextBlock HorizontalAlignment="Left" Margin="39,246,0,0" TextWrapping="Wrap" Text="Hours" VerticalAlignment="Top" FontSize="25" />
+                <TextBlock HorizontalAlignment="Left" Margin="153,246,0,0" TextWrapping="Wrap" Text="Mins" VerticalAlignment="Top" FontSize="25"/>
+                <TextBlock HorizontalAlignment="Left" Margin="280,246,0,0" TextWrapping="Wrap" Text="Secs" VerticalAlignment="Top" FontSize="25"/>
+                <TextBlock x:Name="temp_convo_name" HorizontalAlignment="Left" Margin="615,438,0,0" TextWrapping="Wrap" VerticalAlignment="Top" TextAlignment= "Left" Height="59" Width="243" FontSize="40"/>
             </Grid>
         </Border>
     </Border>

@@ -197,5 +197,45 @@ namespace Multi_Converter
         {
 
         }
+
+        private void time_convo_type_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (t_convo_type.SelectedIndex == 0)
+            {
+                temp_convo_name.Text = "Hours";
+            }
+            if (t_convo_type.SelectedIndex == 1)
+            {
+                temp_convo_name.Text = "Minutes";
+            }
+            if (t_convo_type.SelectedIndex == 2)
+            {
+                temp_convo_name.Text = "Seconds";
+            }
+            
+
+            double result;
+
+            double hour;
+            double min;
+            double sec;
+
+            double.TryParse(hours_text.Text, out hour);
+            double.TryParse(min_text.Text, out min);
+            double.TryParse(sec_text.Text, out sec);
+
+            if(t_convo_type.SelectedIndex == 0)
+            {
+                time_text_out.Text = (hour + (min / 60) + (sec / 120)).ToString();
+            }
+            if (t_convo_type.SelectedIndex == 1)
+            {
+                time_text_out.Text = ((hour*60) + min + (sec / 60)).ToString();
+            }
+            if (t_convo_type.SelectedIndex == 2)
+            {
+                time_text_out.Text = ((hour*3600) + (min* 60) + sec).ToString();
+            }
+        }
     }
 }
