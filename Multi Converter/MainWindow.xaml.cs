@@ -226,15 +226,15 @@ namespace Multi_Converter
 
             if(t_convo_type.SelectedIndex == 0)
             {
-                time_text_out.Text = (hour + (min / 60) + (sec / 120)).ToString();
+                time_text_out.Text = Math.Round((hour + (min / 60) + (sec / 120)), 2).ToString("NO");
             }
             if (t_convo_type.SelectedIndex == 1)
             {
-                time_text_out.Text = ((hour*60) + min + (sec / 60)).ToString();
+                time_text_out.Text = Math.Round(((hour * 60) + min + (sec / 60)), 2).ToString("NO");
             }
             if (t_convo_type.SelectedIndex == 2)
             {
-                time_text_out.Text = ((hour*3600) + (min* 60) + sec).ToString();
+                time_text_out.Text = Math.Round(((hour * 3600) + (min * 60) + sec), 2).ToString("NO");
             }
         }
     }

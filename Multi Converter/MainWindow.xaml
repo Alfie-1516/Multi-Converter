@@ -316,7 +316,7 @@
                         <TextBlock Text="Seconds" FontSize="20"/>
                     </ComboBoxItem>
                 </ComboBox>
-                <TextBox Name="time_text_out" HorizontalAlignment="Left" Margin="322,438,0,0" TextWrapping="Wrap" Text= "{Binding Reviews, StringFormat='{}{0:#,0}'}"  VerticalAlignment="Top" Width="288" Height="59" VerticalContentAlignment="Center" FontSize="45">
+                <TextBox Name="time_text_out" HorizontalAlignment="Left" Margin="322,438,0,0" TextWrapping="Wrap"   VerticalAlignment="Top" Width="288" Height="59" VerticalContentAlignment="Center" FontSize="45">
                     <TextBox.Resources>
                         <Style TargetType="{x:Type Border}">
                             <Setter Property="CornerRadius" Value="10"/>
